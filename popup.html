@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 400px;
+      padding: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: large;
+    }
+    #log {
+      height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 8px;
+      margin: 8px 0;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    .log-entry {
+      margin: 4px 0;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #e5a00d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .success { color: #22c55e; }
+    .info { color: #3b82f6; }
+    .warning { color: #e5a00d; }
+  </style>
+</head>
+<body>
+  <h2>Plex To Letterboxd list</h2>
+  <button id="startButton">Start Scraping</button>
+  <div id="log"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

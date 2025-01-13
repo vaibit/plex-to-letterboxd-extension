@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Plex to Letterboxd",
+    "version": "1.0",
+    "description": "Export films from Plex client to Letterboxd CSV format.",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "48": "icon.png"
+    }
+  }
