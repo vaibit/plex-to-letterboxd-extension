@@ -107,7 +107,7 @@ document.getElementById('startButton').addEventListener('click', async () => {
           noNewMoviesCount++;
   
           // Send a reminder after half the max attempts
-          if (!userScrollReminder && noNewMoviesCount >= Math.floor(maxNoNewMovies / 3)) {
+          if (!userScrollReminder && noNewMoviesCount >= Math.floor(maxNoNewMovies / 2)) {
             chrome.runtime.sendMessage({
               type: 'LOG',
               message: 'No new movies found. Please scroll the page manually to load more content.',
