@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <style>
     body {
       width: 500px;
@@ -8,13 +9,33 @@
       font-family: system-ui, -apple-system, sans-serif;
       font-size: large;
     }
+    #libraries label,
+    .options label {
+      display: block;
+      margin: 4px 0;
+    }
+    .server {
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    .options {
+      margin: 12px 0;
+      padding-top: 8px;
+      border-top: 1px solid #ccc;
+    }
+    .hint {
+      font-size: small;
+      color: #666;
+      margin-left: 24px;
+    }
     #log {
-      height: 200px;
+      height: 160px;
       overflow-y: auto;
       border: 1px solid #ccc;
       padding: 8px;
       margin: 8px 0;
       font-family: monospace;
+      font-size: medium;
       white-space: pre-wrap;
     }
     .log-entry {
@@ -39,8 +60,14 @@
   </style>
 </head>
 <body>
-  <h2>Plex To Letterboxd list</h2>
-  <button id="startButton">Start Scraping</button>
+  <h2>Plex To Letterboxd</h2>
+  <div id="libraries"></div>
+  <div class="options">
+    <label><input type="checkbox" id="watchedOnly"> Only watched films</label>
+    <label><input type="checkbox" id="diaryFields"> Include watched date and rating</label>
+    <div class="hint">For importing into your Letterboxd diary. Leave off when importing to a list.</div>
+  </div>
+  <button id="exportButton" disabled>Export CSV</button>
   <div id="log"></div>
   <script src="popup.js"></script>
 </body>
