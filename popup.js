@@ -227,6 +227,9 @@ async function plexBridge(action, args) {
       },
     });
     const serverResources = resources.filter((resource) => (resource.provides || '').split(',').includes('server'));
+    if (serverResources.length === 0) {
+      throw new Error('No Plex servers found for this account. Open your server\'s /web page instead (e.g. http://<server-ip>:32400/web).');
+    }
 
     return Promise.all(serverResources.map(async (resource) => {
       const serverToken = resource.accessToken || token;
